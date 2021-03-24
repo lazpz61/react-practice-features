@@ -9,6 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
+        <FeatureContainer />
         <h1>Features Practice</h1>
         <div>Todays date is {moment().format("MMMM Do YYYY")}</div>
         

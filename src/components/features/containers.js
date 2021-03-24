@@ -1,6 +1,7 @@
 import { suppressDeprecationWarnings } from "moment";
-import { render } from "node-sass";
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
+
 
 export default class FeatureContainer extends Component {
     constructor() {
@@ -34,16 +35,21 @@ class NameForm extends Component {
 
 render() {
     return (
-        <form onSubmit={this.handleSubmit}>
-            <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-        </form>
+        <div>
+            <h1>{this.state.name}</h1>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+
+        </div>
     );
- }
 }
+}
+
 
 ReactDOM.render(
     <NameForm />,
