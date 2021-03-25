@@ -17,6 +17,10 @@ export default class App extends Component {
         <NameForm />
         <h1>This will be where my list for questions and the inputs will be</h1>
         <FeatureContainer />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
 
       </div>
     );
