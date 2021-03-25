@@ -1,6 +1,6 @@
-import { suppressDeprecationWarnings } from "moment";
+import Moment from "moment";
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+
 
 
 export default class FeatureContainer extends Component {
@@ -13,45 +13,16 @@ export default class FeatureContainer extends Component {
             city: "Manhattan",
         }
     }
-}
+    render(){
+        return(
 
-class NameForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+            <div>
+                <h1>My name is {this.state.name}</h1>
+                <h1>My email address is {this.state.email}</h1>
+                <h1>I was born in the city of {this.state.city}</h1>
+            </div>
+        );
     }
-
-    handleChange(event){
-        this.setState({value: event.target.value});
-    }
-
-    handleSubmit(event) {
-        alert(`A name was submitted ` + this.state.value);
-        event.preventDefault();
-    }
-
-render() {
-    return (
-        <div>
-            <h1>{this.state.name}</h1>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-
-        </div>
-    );
-}
 }
 
 
-ReactDOM.render(
-    <NameForm />,
-    document.getElementById('root')
-);
