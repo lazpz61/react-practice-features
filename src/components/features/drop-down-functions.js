@@ -1,11 +1,11 @@
 import React, {Component} from "react";
-import { DropDown } from "./features/drop-down-btn";
+import { DropDown } from "./drop-down-btn";
 
 const crmData = [
-    { employee: "John Daniels", position: "Farmers"},
-    { employee: "John John", position: "Bus Driver"},
-    { employee: "Nafis Ahmed", position: "Epidemiologist" },
-    { employee: "Ahmed Ahmed", position: "Software Developer" }
+    { employee: "John Daniels", role: "Farmer"},
+    { employee: "John John", role: "Bus Driver"},
+    { employee: "Nafis Ahmed", role: "Epidemiologist" },
+    { employee: "Ahmed Ahmed", role: "Software Developer" }
   ];
 
 
@@ -28,7 +28,7 @@ showPositionEntries = () => {
 };
 toggleStatus = () => {
     if (this.state.clicked) {
-        this.setState({ crmPositionData, clicked: true});
+        this.setState({ crmPositionData: [], clicked: false});
     } else {
         this.setState({ crmPositionData: crmData, clicked: true });
     }
@@ -48,10 +48,10 @@ render() {
     return (
         <div>
         <h1>CRM Data</h1>
-        {crmEmployeeData}
         <button onClick={this.clearEntries}>Clear Crm Data</button>
         <button onClick={this.showPositionEntries}>Show Crm Data</button>
         <button onClick={this.toggleStatus}>Toggle Crm Data</button>
+        {crmEmployeeData}
         </div>
         );
     }
