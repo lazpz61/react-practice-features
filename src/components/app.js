@@ -6,48 +6,50 @@ import FeatureContainer from "./features/containers";
 import NameForm from "./features/name-form";
 import  Logo from "./features/logo-component";
 import CrmPositions from "./features/drop-down-functions";
+import Counter from "./features/increment";
+import Counting from "./features/counter";
 
 
 
 export default class App extends Component {
 
 
-  //   constructor() {
-  //     super();
+    constructor() {
+      super();
 
 
-  //     this.state = {
-  //       data: []
-  //     };
+      this.state = {
+        data: []
+      };
 
-  //   } 
-  // getPortfolioItems(){
-  //   axios.get()
-  // .then( response => {
-  //   // handle success
-  //   this.setState({
-  //     data: response.data.portfolio_items
-  //   })
-  // })
-  // .catch(error => {
-  //   // handle error
-  //   console.log(error);
-  // })
-  // .then( () => {
-  //   // always executed
-  // });
-  // }
+    } 
+  getPortfolioItems(){
+    axios.get()
+  .then( response => {
+    // handle success
+    this.setState({
+      data: response.data.portfolio_items
+    })
+  })
+  .catch(error => {
+    // handle error
+    console.log(error);
+  })
+  .then( () => {
+    // always executed
+  });
+  }
 
-  // portfolioItems() {
+  portfolioItems() {
 
-  //   return this.state.data.map(item => {
-  //     return <PortfolioItem key={item.id} item={item}/>;
-  //   });
-  // }
+    return this.state.data.map(item => {
+      return <PortfolioItem key={item.id} item={item}/>;
+    });
+  }
 
-  // componentDidMount(){
-  //   this.getPortfolioItems();
-  // }
+  componentDidMount(){
+    this.getPortfolioItems();
+  }
 
 
 
@@ -67,6 +69,10 @@ export default class App extends Component {
         <input type="text" />
         <h1>Drop Down List</h1>
         <CrmPositions />
+        <hr />
+        <Counter />
+        <hr />
+        <Counting />
 
 
       </div>
